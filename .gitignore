@@ -1,0 +1,6 @@
+/target
+/tmp
+/data
+
+.directory
+.DS_Store
