@@ -152,7 +152,6 @@ async fn delete_by_prefix(
         .collect();
     for index in indices {
         let index = index.map_err(|e| error::ErrorInternalServerError(e))?;
-        println!("DEL {}", index);
         search_engine.delete(index).map_err(|e| {
             error::ErrorInternalServerError(format!("Error deleting document: {:?}", e))
         })?;
