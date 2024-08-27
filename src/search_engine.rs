@@ -688,9 +688,9 @@ impl SearchEngine {
         unsafe {
             let result = libc::renameat2(
                 libc::AT_FDCWD,
-                self_dir_cstr.as_ptr() as *const i8,
+                self_dir_cstr.as_ptr() as *const libc::c_char,
                 libc::AT_FDCWD,
-                other_dir_cstr.as_ptr() as *const i8,
+                other_dir_cstr.as_ptr() as *const libc::c_char,
                 libc::RENAME_EXCHANGE,
             );
             if result == -1 {
